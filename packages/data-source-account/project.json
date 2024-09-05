@@ -1,0 +1,19 @@
+{
+  "name": "data-source-account",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/data-source-account/src",
+  "projectType": "library",
+  "tags": ["type:data-source"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/data-source-account",
+        "main": "packages/data-source-account/src/index.ts",
+        "tsConfig": "packages/data-source-account/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}

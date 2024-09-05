@@ -1,0 +1,19 @@
+{
+  "name": "util-shared",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/util-shared/src",
+  "projectType": "library",
+  "tags": ["type:util"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/util-shared",
+        "main": "packages/util-shared/src/index.ts",
+        "tsConfig": "packages/util-shared/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}

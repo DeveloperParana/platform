@@ -1,0 +1,13 @@
+{
+  "name": "@platform/domain-account",
+  "version": "0.0.1",
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@platform/util-shared": "0.0.1",
+    "rxjs": "^7.8.0"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "private": true
+}

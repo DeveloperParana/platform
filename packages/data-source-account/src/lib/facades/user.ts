@@ -10,10 +10,7 @@ export class UserFacade {
   constructor(
     private readonly createUserUseCase: CreateUserServerUseCase,
     private readonly findUsersUseCase: FindUsersServerUseCase
-  ) {
-    console.log(createUserUseCase, findUsersUseCase);
-
-  }
+  ) {}
 
   createUser(data: CreateUserDto) {
     return this.createUserUseCase.execute(data);

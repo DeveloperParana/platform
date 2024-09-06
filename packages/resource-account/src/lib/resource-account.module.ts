@@ -8,9 +8,6 @@ import { JwtModule, JwtService } from '@nestjs/jwt';
 import { UsersController, AuthController } from './controllers';
 import { Module } from '@nestjs/common';
 
-console.log(dataSourceAccountProviders);
-
-
 @Module({
   controllers: [AuthController, UsersController],
   imports: [

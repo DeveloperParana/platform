@@ -1,4 +1,5 @@
-export * from './lib/data-source-account.providers';
+export * from './lib/providers/index';
+export * from './lib/providers';
 export * from './lib/repositories';
 export * from './lib/providers';
 export * from './lib/entities';

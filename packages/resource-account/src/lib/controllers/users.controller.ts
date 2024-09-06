@@ -11,10 +11,7 @@ import {
 
 @Controller('users')
 export class UsersController {
-  constructor(private readonly userFacade: UserFacade) {
-    console.log(userFacade['findUsersUseCase']);
-
-  }
+  constructor(private readonly userFacade: UserFacade) {}
 
   @Get()
   find(

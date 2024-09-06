@@ -4,6 +4,7 @@ export * from './find-all';
 export * from './find-one';
 export * from './find-params';
 export * from './find';
+export * from './paged';
 export * from './remove-one';
 export * from './update-one';
 export * from './use-case';

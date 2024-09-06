@@ -1,5 +1,6 @@
 import {
   Find,
+  Paged,
   FindOne,
   CreateOne,
   FindParams,
@@ -19,7 +20,7 @@ export abstract class UserRepository
 {
   abstract createOne(entity: CreateUser): Promise<User>;
 
-  abstract find(params: FindParams<User>): Promise<User[]>;
+  abstract find(params: FindParams<User>): Promise<Paged<User>>;
 
   abstract findOne(params: Partial<User>): Promise<User>;
 

@@ -26,7 +26,7 @@ Nesta camada, elas são contratos definidos e que serão implementados na camada
 
 ## Ports
 
-Em arquitetura, são abstrações que definem pontos de entrada e saída, permitindo que diferentes partes do software funcionem de forma desacoplada. Como as interfaces, eles definem contratos descrevendo as operações que a aplicaçãopode executar, como comandos de entrada ou comunicação de serviços de terceiros. Também como as interfaces de entidade, eles exigem alguém que os implemente um adaptador de forma concreta, não necessariamente na camada de acesso a dados, podendo variar dependendo das camadas onde são utilizados. Isso facilita mudanças de soluções / tecnologias com alterações mínimas ao invés de grandes reescritas de código.
+Em arquitetura, são abstrações que definem pontos de entrada e saída, permitindo que diferentes partes do software funcionem de forma desacoplada. Como as interfaces, eles definem contratos descrevendo as operações que a aplicação pode executar, como comandos de entrada ou comunicação em serviços de terceiros. Também como as interfaces de entidade, eles exigem alguém que os implemente um adaptador de forma concreta, não necessariamente na camada de acesso a dados, podendo variar dependendo das camadas onde são utilizados. Isso facilita mudanças de soluções / tecnologias com alterações mínimas ao invés de grandes reescritas de código.
 
 ## Repositories
 

@@ -1,10 +1,17 @@
-import { SignInServerUseCase } from '@platform/domain-account';
-import { SignInDto } from '../dtos';
+import { SignInServerUseCase, SignUpServerUseCase } from '@platform/domain-account';
+import { SignInDto, SignUpDto } from '../dtos';
 
 export class AuthFacade {
-  constructor(private readonly signInUseCase: SignInServerUseCase) {}
+  constructor(
+    private readonly signInUseCase: SignInServerUseCase,
+    private readonly signUpUseCase: SignUpServerUseCase
+  ) {}
 
   signIn(data: SignInDto) {
     return this.signInUseCase.execute(data);
+  }
+
+  signUp(data: SignUpDto) {
+    return this.signUpUseCase.execute(data);
   }
 }

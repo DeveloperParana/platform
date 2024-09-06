@@ -4,6 +4,7 @@ import {
   FindParams,
   RemoveOne,
   UpdateOne,
+  Paged,
 } from '@platform/util-shared';
 import { User } from '../entities';
 import { Observable } from 'rxjs';
@@ -14,7 +15,7 @@ export abstract class UserService
 {
   abstract createOne(entity: CreateUser): Observable<User>;
 
-  abstract find(params: FindParams<User>): Observable<User[]>;
+  abstract find(params: FindParams<User>): Observable<Paged<User>>;
 
   abstract updateOne(id: string, entity: Partial<User>): Observable<User>;
 

@@ -13,8 +13,64 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "type:util",
+                "onlyDependOnLibsWithTags": ["type:util"]
+              },
+              {
+                "sourceTag": "type:domain",
+                "onlyDependOnLibsWithTags": ["type:util", "type:api"]
+              },
+              {
+                "sourceTag": "type:data-source",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:domain",
+                  "type:api"
+                ]
+              },
+              {
+                "sourceTag": "type:data-access",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:domain",
+                  "type:api"
+                ]
+              },
+              {
+                "sourceTag": "type:resource",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:data-source",
+                  "type:resource"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:data-access",
+                  "type:feature"
+                ]
+              },
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:data-source",
+                  "type:resource",
+                  "type:feature"
+                ]
+              },
+              {
+                "sourceTag": "type:api",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:domain",
+                  "type:data-source",
+                  "type:resource",
+                  "type:feature",
+                  "type:api"
+                ]
               }
             ]
           }

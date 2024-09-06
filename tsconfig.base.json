@@ -19,6 +19,7 @@
         "packages/data-source-account/src/index.ts"
       ],
       "@platform/domain-account": ["packages/domain-account/src/index.ts"],
+      "@platform/feature-auth": ["packages/feature-auth/src/index.ts"],
       "@platform/resource-account": ["packages/resource-account/src/index.ts"],
       "@platform/util-shared": ["packages/util-shared/src/index.ts"]
     }

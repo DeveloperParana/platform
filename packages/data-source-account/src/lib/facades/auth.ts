@@ -8,6 +8,8 @@ export class AuthFacade {
   ) {}
 
   signIn(data: SignInDto) {
+    console.log(data);
+
     return this.signInUseCase.execute(data);
   }
 

@@ -2,19 +2,14 @@ import {
   provideJwtService,
   dataSourceAccountProviders,
   provideUserRepositoryTest,
+  providePresentationRepositoryTest,
 } from '@platform/data-source-account';
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersController } from './users.controller';
 import { JwtModule, JwtService } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-const userRepository = {
-  createOne: jest.fn(),
-  find: jest.fn(),
-  findOne: jest.fn(),
-  updateOne: jest.fn(),
-  removeOne: jest.fn()
-}
+
 
 describe('UsersController', () => {
   let controller: UsersController;
@@ -24,12 +19,30 @@ describe('UsersController', () => {
       controllers: [UsersController],
       imports: [
         JwtModule,
-        TypeOrmModule,
+        TypeOrmModule
       ],
       providers: [
         provideJwtService(JwtService),
+
         ...dataSourceAccountProviders,
-        provideUserRepositoryTest(userRepository)
+
+        provideUserRepositoryTest({
+          createOne: jest.fn(),
+          find: jest.fn(),
+          findOne: jest.fn(),
+          updateOne: jest.fn(),
+          removeOne: jest.fn()
+        }),
+
+        providePresentationRepositoryTest({
+          createComment: jest.fn(),
+          createLike: jest.fn(),
+          createOne: jest.fn(),
+          find: jest.fn(),
+          findOne: jest.fn(),
+          removeOne: jest.fn(),
+          updateOne: jest.fn(),
+        })
       ],
     }).compile();
 

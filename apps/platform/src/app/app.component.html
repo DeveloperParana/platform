@@ -1,0 +1,7 @@
+<h1>Welcome platform</h1>
+
+@for (avatar of avatares; track avatar) {
+  <img [src]="avatar" width="128">
+}
+
+<router-outlet></router-outlet>

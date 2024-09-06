@@ -1,11 +1,15 @@
+import { Role, User } from '@platform/domain-account';
+import { PresentationEntity } from './presentation';
 import {
   Column,
   Entity,
+  OneToMany,
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Role, User } from '@platform/domain-account';
+import { PresentationCommentEntity } from './presentation-comment';
+import { PresentationLikeEntity } from './presentation-like';
 
 @Entity()
 export class UserEntity implements User {
@@ -15,7 +19,7 @@ export class UserEntity implements User {
   @Column({ nullable: false })
   firstName: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: false, default: '' })
   lastName: string;
 
   @Column({ unique: true, nullable: false })
@@ -27,8 +31,11 @@ export class UserEntity implements User {
   @Column({ nullable: false })
   password: string;
 
-  @Column()
+  @Column({ default: '' })
   phone: string;
+
+  @Column({ default: '' })
+  minibio: string;
 
   @Column({
     type: 'enum',
@@ -43,14 +50,14 @@ export class UserEntity implements User {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  // @OneToMany(() => Presentation, (presentation) => presentation.user)
-  // presentations: Presentation[];
+  @OneToMany(() => PresentationEntity, (presentation) => presentation.user)
+  presentations: PresentationEntity[];
 
-  // @OneToMany(() => PresentationComment, (comment) => comment.user)
-  // comments: PresentationComment[];
+  @OneToMany(() => PresentationCommentEntity, (comment) => comment.user)
+  comments: PresentationCommentEntity[];
 
-  // @OneToMany(() => PresentationLike, (like) => like.user)
-  // likes: PresentationLike[];
+  @OneToMany(() => PresentationLikeEntity, (like) => like.user)
+  likes: PresentationLikeEntity[];
 
   // @OneToMany(() => Event, (event) => event.user)
   // events: Event[];

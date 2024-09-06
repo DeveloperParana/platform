@@ -8,10 +8,14 @@ export class SignInServerUseCase implements UseCase<SignIn, AccessToken> {
     private readonly userRepository: UserRepository,
     private readonly cryptoService: CryptoService,
     private readonly jwtService: JwtService
-  ) {}
+  ) {
+  }
 
   async execute({ username, password }: SignIn): Promise<AccessToken> {
     const user = await this.userRepository.findOne({ username });
+
+    console.log(user);
+
 
     if (!user) {
       throw new UnauthorizedException();
